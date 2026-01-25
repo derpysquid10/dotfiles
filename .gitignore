@@ -6,3 +6,4 @@ tmux/plugins/
 !tmux/plugins/tpm
 tmux/resurrect/*
 
+google_internal
