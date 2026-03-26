@@ -112,6 +112,7 @@ alias grh='git reset'  # (HEAD)
 alias grhh='git reset --hard'
 alias grso='git reset --soft origin/$(git_current_branch)'
 alias grho='git reset --hard origin/$(git_current_branch)'
+alias grsh="git reset --soft HEAD~1"
 # rebase
 alias grb='git rebase'  # <basebranch> <topicbranch>
 alias grbi='git rebase -i' # interactively  
