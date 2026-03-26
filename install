@@ -54,4 +54,10 @@ then
     ./install.py --clang-completer
 fi 
 
+echo_green "==> Setting up Gemini CLI"
+bash "${BASEDIR}/agents/setup_gemiini_cli.sh"
+
+echo_green "==> Setting up Claude Code"
+bash "${BASEDIR}/agents/setup_claude_code.sh"
+
 echo_green "Done!"

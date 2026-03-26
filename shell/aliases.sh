@@ -163,14 +163,23 @@ alias py3_path='python3 -c "import sys; print(sys.path)"'
 alias torch_version='python -c "import torch; print(torch.version.cuda)"'
 alias torch_cuda='python -c "import torch; print(torch.cuda.is_available())"'
 #conda 
-# alias ca='conda activate'
-# alias coa='.anaconda/bin/activate'
-# alias sa='source activate'
-# alias cod='conda deactivate'  # different  from cd 
-# alias sd="source deactivate"
-# alias coel='conda info --envs'
-# alias coer='conda env remove --name'
+alias ca='conda activate'
+alias coa='.anaconda/bin/activate'
+alias sa='source activate'
+alias cod='conda deactivate'  # different  from cd 
+alias sd="source deactivate"
+alias coel='conda info --envs'
+alias coer='conda env remove --name'
 alias conda_export='conda env export > environment.yml'
+
+#micromamba
+alias mm="micromamba"
+alias mma="micromamba activate"
+alias mmd="micromamba deactivate"
+alias micromamba_export="micromamba env export > environemnt.yml"
+
+#rsync
+alias copy='rsync -avzP'
 
 # path
 alias echo_path='echo $PATH | tr ":" "\n"'
@@ -184,42 +193,13 @@ alias peek='tee >(cat 1>&2)'
 alias cressida="ssh doc_cressida"
 alias bigboy="ssh doc_bigboy"
 
+# claude swapping
+alias csw="cswap"
+alias csws="cswap --switch"
+alias cswls="cswap --list"
+
 
 ####################################################################
-# OS dependent aliases
-case "$(uname -s)" in
-    # 'Mac OS X'
-    Darwin)
-        alias clear-dnscache="dscacheutil -flushcache && sudo killall -HUP mDNSResponder"
-        alias bu="brew update && brew outdated | xargs brew upgrade  && brew cleanup -s"
-        alias mvf='mv "$(pfs)"' # Move current finder selection
-        alias ssh_unmount='sudo diskutil unmount force '
-        # deprated due to M1
-        # alias ls='/usr/local/opt/coreutils/libexec/gnubin/ls --color=auto'
-        alias ls='ls --color=auto'
-        alias o='open'
-        ;;
-
-    Linux)
-        #  echo 'Linux'
-        alias watch_gpu='watch -n 0.1 nvidia-smi'
-        alias wgpu='watch -n 0.1 nvidia-smi'
-        alias ssh_unmount='fusermount -u '
-        alias ls='ls --color=auto'
-        alias o='xdg-open'
-        ;;
-
-    CYGWIN*|MINGW32*|MSYS*)
-        # echo 'MS Windows'
-        ;;
-
-        # Add here more strings to compare
-        # See correspondence table at the bottom of this answer
-
-    *)
-        # echo 'other OS'
-        ;;
-esac
 
 
 # Shell dependent Alias (only zsh has global aliases)
@@ -235,7 +215,7 @@ case $SHELL in
    ;;
 esac
 
-# hostname dependent alias
-if [[ "$(hostname)" == "binbin-pc" ]]; then 
-    alias earphone='python3 /home/binbin/Documents/bluetooth\ sound/sony_connect.py' 
-fi
+# # hostname dependent alias
+# if [[ "$(hostname)" == "binbin-pc" ]]; then 
+#     alias earphone='python3 /home/binbin/Documents/bluetooth\ sound/sony_connect.py' 
+# fi
